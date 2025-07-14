@@ -1,3 +1,11 @@
 {
+<<<<<<< HEAD
   "/page": "app/page.js"
+=======
+  "/employee/assign-trucks/page": "app/employee/assign-trucks/page.js",
+  "/page": "app/page.js",
+  "/employee/route-planner/page": "app/employee/route-planner/page.js",
+  "/login/page": "app/login/page.js",
+  "/employee/dashboard/page": "app/employee/dashboard/page.js"
+>>>>>>> 55882e61d9a51c1f776870db03f7bfa06a476190
 }
