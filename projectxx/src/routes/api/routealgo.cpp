@@ -45,7 +45,9 @@ vector<pair<int, int>> primMST(const vector<vector<double>>& cost) {
 // Step 3: Find vertices with odd degree
 vector<int> findOddDegreeVertices(const vector<pair<int, int>>& edges, int n) {
     vector<int> degree(n, 0);
-    for (auto [u, v] : edges) {
+    for (const auto& edge : edges) {
+        int u = edge.first;
+        int v = edge.second;
         degree[u]++;
         degree[v]++;
     }
@@ -100,8 +102,8 @@ void dfsEuler(int u, multimap<int,int>& graph, vector<int>& path) {
 
 vector<int> eulerTour(const vector<pair<int,int>>& mst, const vector<pair<int,int>>& matching, int n) {
     multimap<int,int> graph;
-    for (auto [u,v] : mst) addEdge(graph, u, v);
-    for (auto [u,v] : matching) addEdge(graph, u, v);
+    for (const auto& edge : mst) addEdge(graph, edge.first, edge.second);
+    for (const auto& edge : matching) addEdge(graph, edge.first, edge.second);
     vector<int> path;
     dfsEuler(0, graph, path);
     reverse(path.begin(), path.end());
